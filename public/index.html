@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+  </head>
+  <body
+    class="bg-gray-100 flex items-center justify-center h-screen dark:bg-slate-900 flex-col"
+  >
+    <!-- dropdown -->
+    <div x-data="{isOpen : false}" class="text-blue-500 mb-10 relative">
+      <button @click="isOpen = !isOpen" class="relative z-10">
+        <span class="sun">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            />
+          </svg>
+        </span>
+        <span class="moon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        x-show="isOpen"
+        class="absolute left-0 mt-2 w-56 overflow-hidden rounded-lg border-gray-200 bg-white dark:bg-gray-700"
+      >
+        <a
+          href="#"
+          data-theme="light"
+          class="theme-switcher block px-4 py-2 text-sm text-slate-800 hover:bg-gray-100 dark:text-white dark:hover:bg-slate-600"
+          >light</a
+        >
+        <a
+          href="#"
+          data-theme="dark"
+          class="theme-switcher block px-4 py-2 text-sm text-slate-800 hover:bg-gray-100 dark:text-white dark:hover:bg-slate-600"
+          >dark</a
+        >
+        <a
+          href="#"
+          data-theme="system"
+          class="theme-switcher block px-4 py-2 text-sm text-slate-800 hover:bg-gray-100 dark:text-white dark:hover:bg-slate-600"
+          >system</a
+        >
+      </div>
+    </div>
+    <!-- card -->
+    <div class="flex font-sans bg-white rounded-xl shadow-lg dark:bg-slate-700">
+      <div class="flex-none w-56 relative">
+        <img
+          src="/assets/images/Photo21-11-2022_42525pm_9843b548-2310-4d72-a6ae-d4f889e9332e.webp"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover rounded-lg"
+          loading="lazy"
+        />
+      </div>
+      <form class="flex-auto p-6">
+        <div class="flex flex-wrap">
+          <h1 class="flex-auto font-medium text-slate-900 dark:text-white">
+            Kids Jumpsuit
+          </h1>
+          <div
+            class="w-full flex-none mt-2 order-1 text-3xl font-bold text-violet-600"
+          >
+            $39.00
+          </div>
+          <div class="text-sm font-medium text-slate-400 dark:text-slate-200">
+            In stock
+          </div>
+        </div>
+        <div
+          class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200"
+        >
+          <div class="space-x-2 flex text-sm font-bold">
+            <label>
+              <input
+                class="sr-only peer"
+                name="size"
+                type="radio"
+                value="xs"
+                checked
+              />
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white"
+              >
+                XS
+              </div>
+            </label>
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="s" />
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white"
+              >
+                S
+              </div>
+            </label>
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="m" />
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white"
+              >
+                M
+              </div>
+            </label>
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="l" />
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white"
+              >
+                L
+              </div>
+            </label>
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="xl" />
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white"
+              >
+                XL
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="flex space-x-4 mb-5 text-sm font-medium">
+          <div class="flex-auto flex space-x-4">
+            <button
+              class="h-10 px-6 font-semibold rounded-full bg-violet-600 text-white"
+              type="submit"
+            >
+              Buy now
+            </button>
+            <button
+              class="h-10 px-6 font-semibold rounded-full border border-slate-200 text-slate-900 dark:text-white"
+              type="button"
+            >
+              Add to bag
+            </button>
+          </div>
+          <button
+            class="flex-none flex items-center justify-center w-9 h-9 rounded-full text-violet-600 bg-violet-50"
+            type="button"
+            aria-label="Like"
+          >
+            <svg width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              />
+            </svg>
+          </button>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-300">
+          Free shipping on all continental US orders.
+        </p>
+      </form>
+    </div>
+
+    <script src="/src/js/theme.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
